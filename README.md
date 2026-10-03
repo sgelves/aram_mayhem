@@ -139,25 +139,16 @@ Review after corrections:
 | Stat Anvils (Compliant), iPhone | OK to build from. Level 9, 750 G, "value TBD", Stats!/Stats on Stats!/Stats on Stats on Stats! = ×2/×3/×4. |
 | Launch screen | OK. |
 | App icon (full-bleed) + tinted/mono variant | OK. |
-| iPad Landscape (Augments & Detail) | **Not OK**: winrate 58.4%, "Top 4% Pick", tier distribution, "Simulate Damage Output", invented subtitles, extra nav (Synergy Builds, Tier Matrix, Reroll Sim, Abyss Engine, Summoner Forge), Inter/Space Grotesk, no color tokens, overlapping raw icon-name text bug. |
-| iPad Landscape (Stat Anvils & Detail) | **Not OK**: drop weights 55/35/10%, invented tier effects on anvil augments ("guarantees Prismatic", "+15% rare chance"), same nav/font/token problems. |
+| iPad Landscape (Augments Compliant) | OK to build from (redone 2026-10-03). Sidebar has only Augments and Anvils, SF system font, "Sample data" label, no winrates/pick %/tier distribution. Percentages shown are sample augment-description values only. |
+| iPad Landscape (Stat Anvils Compliant) | OK to build from (redone 2026-10-03). Level 9, 750 G, "value TBD", no drop weights or invented tier effects. |
+
+The original iPad versions were rejected for: winrate 58.4%, "Top 4% Pick", tier distribution, "Simulate Damage Output", extra nav (Synergy Builds, Tier Matrix, Reroll Sim, Abyss Engine, Summoner Forge), drop weights 55/35/10%, invented tier effects ("guarantees Prismatic", "+15% rare chance"), Inter/Space Grotesk, no color tokens.
 
 Nits on the OK screens: "Toggle Empty State Preview" is mock-only; hide the "Grants Stat Anvils ×0" row when the count is 0; map Material icon names to SF Symbols; use SF Pro in SwiftUI.
 
 **Still missing:** iPhone landscape, iPad portrait, theme/component sheet, loading and error states. The Stitch design-system tokens themselves are still the drifted ones (screens override them).
 
-**Fix prompt for the iPad screens (give to Stitch):**
-
-```
-Redo both iPad landscape screens using the same style as the iPhone "Compliant" screens:
-- Colors #0B1020 / #141A2E / #1C2440 / #2A3352, Frost Cyan #3FD0E0, Forge Ember #FF7A3D; system font (SF Pro); 16pt card radius.
-- Sidebar has ONLY "Augments" and "Anvils". Remove Synergy Builds, Tier Matrix, Abyss Engine, Summoner Forge, Reroll Sim, the reroll simulator banner, and the search hint text about death timers.
-- Remove ALL winrates, Top % pick, tier distribution, drop weights, "Simulate Damage Output", "Draft into Active Loadout", subtitles like "Passive Surge", and "Keystone".
-- Detail panel: icon, name, tier, description, tags, anvil count (hide the row when 0). Nothing else.
-- Anvils: use the iPhone wording exactly (level 9, 750 gold, "value TBD"). Stats! x2, Stats on Stats! x3, Stats on Stats on Stats! x4. No tier effects like "guarantees Prismatic" or "+15% rare chance".
-- Fix the overlapping text on the Apex Blacksmith card (a raw icon name is showing).
-- Keep "Sample data" labels and the fan-made disclaimer.
-```
+A Figma copy of the compliant screens (inspect-only, raw captured frames) lives in "Mayhem Forge — Stitch Export": https://www.figma.com/design/ZNCnbEUQavsNCkMjulY9oN
 
 ## 8. Open items
 
@@ -166,4 +157,5 @@ Redo both iPad landscape screens using the same style as the iPhone "Compliant" 
 - [ ] Re-verify anvil unlock level / gold cost and anvil counts for the current patch.
 - [ ] Re-verify augment pick levels after patch 26.12.
 - [ ] Decide on hosting for `augments.json` / `anvils.json`.
-- [ ] Redo the iPad Stitch screens; generate iPhone landscape, iPad portrait, theme sheet, loading/error states.
+- [x] Redo the iPad landscape Stitch screens.
+- [ ] Generate iPhone landscape, iPad portrait, theme sheet, loading/error states.

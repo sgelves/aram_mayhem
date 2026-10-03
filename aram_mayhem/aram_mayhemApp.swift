@@ -11,7 +11,7 @@ import SwiftUI
 struct aram_mayhemApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AnvilsView()
         }
     }
 }

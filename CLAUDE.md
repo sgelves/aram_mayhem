@@ -22,5 +22,6 @@ Full project context (mode facts, data sources, architecture, design tokens, Sti
 ## Design source (Stitch)
 
 - Project `18417273127315870605` ("Mayhem Forge iOS Companion"). Tokens are in README section 6; use them, not the drifted Stitch design-system values (`#0e1323`, Plus Jakarta Sans).
-- Authoritative screens: "Mayhem Forge — Augments (Compliant)", "Mayhem Forge — Stat Anvils (Compliant)", launch screen, app icon (full-bleed + tinted/mono).
-- **Do not use** the iPad landscape screens as a reference until redone (they contain invented winrates, drop weights and extra navigation). See README section 7.
+- Authoritative screens: "Mayhem Forge — Augments (Compliant)", "Mayhem Forge — Stat Anvils (Compliant)", "Mayhem Forge — iPad Landscape (Augments Compliant)", "Mayhem Forge — iPad Landscape (Stat Anvils Compliant)", launch screen, app icon (full-bleed + tinted/mono).
+- Figma copy of the Stitch screens (inspect-only): file key `ZNCnbEUQavsNCkMjulY9oN`. The export process is documented in `FIGMA_EXPORT.md` (repo root; deliberately not `@`-imported). **Go to that file only, and only when the Stitch → Figma export process itself must change or be redone** (updated Stitch screens, broken import, new assets). Do not read it for any other task.
+- Still missing in Stitch: iPhone landscape, iPad portrait, theme sheet, loading/error states. See README section 7.
