@@ -1,93 +1,11 @@
 //
-//  AnvilsView.swift
+//  AnvilsHeaderSection.swift
 //  aram_mayhem
 //
-//  Created by Sergio Gelves on 3/10/26.
+//  Created by Sergio Gelves on 5/10/26.
 //
 
 import SwiftUI
-
-struct AnvilsView: View {
-    
-    var body: some View {
-        
-        List {
-            AnvilsHeaderSection()
-            
-                
-            HStack {
-                Text("Forge Tier Catalog")
-                Spacer()
-                Text("Tap for Details")
-            }
-            .listRowBackground(Color.clear)
-            
-            ForEach(0..<3) { _ in
-                AnvilsTierCatalogSection()
-            }
-        }
-        .scrollContentBackground(.hidden)
-        .background(Color.lightTextPrimary)
-        .listStyle(.insetGrouped)
-    }
-}
-
-struct AnvilsTierCatalogSection: View {
-    
-    @State var anvilsList: [String] = ["", "", ""]
-    
-    var body: some View {
-        Section {
-            
-            HStack(alignment: .center, spacing: 10) {
-                
-                Image(systemName: "wrench.adjustable")
-                    .frame(width: 32, height: 32)
-                    .padding(8)
-                    .buttonBorderShape(.roundedRectangle)
-                
-                VStack {
-                    Text("Silver Anvil")
-                        .font(.headline)
-                    Text("Unlock level 9")
-                        .font(.headline)
-                }
-                
-                Spacer()
-                
-                (Text("\(Image(systemName: "dollarsign.circle")) ").foregroundColor(Color.orange) + Text("Cost 750 Gold").foregroundColor(Color.snowlight))
-                    .padding([.horizontal], 15)
-                    .padding([.vertical], 5)
-                    .background(
-                        RoundedRectangle(cornerRadius: 15).foregroundStyle(Color.glacierSlate)
-                    )
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 15).stroke(Color.frozenSteel, lineWidth: 2)
-                    }
-            }
-            
-            
-            Divider().frame(height: 2).overlay(Color.glacierSlate.opacity(0.4))
-            
-            ForEach($anvilsList, id: \.self) { _ in
-                HStack {
-                    Text("Stat")
-                    
-                    Spacer()
-                    
-                    Text("Value TDB")
-                }
-                .padding(15)
-                .background(Color.fog, in: .rect(cornerRadius: 15))
-                .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color.glacierSlate.opacity(0.4), lineWidth: 2))
-            }
-
-        }
-        .listRowSpacing(0)
-        .listRowBackground(Color.deepIce)
-        .listRowSeparator(.hidden)
-    }
-}
 
 struct AnvilsHeaderSection: View {
     
@@ -99,9 +17,9 @@ struct AnvilsHeaderSection: View {
             Text("\(Image(systemName: "info.circle")) ").foregroundColor(Color.orange) + Text("What are Stat Anvils?").foregroundColor(Color.white)
             Spacer()
             if isExpanded {
-                Image(systemName: "arrow.up")
+                Image(systemName: "chevron.up")
             } else {
-                Image(systemName: "arrow.down")
+                Image(systemName: "chevron.down")
             }
         }.onTapGesture {
             isExpanded.toggle()

@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "App Icon — Full-Bleed.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -12,6 +13,7 @@
           "value" : "dark"
         }
       ],
+      "filename" : "Mono 1.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -23,6 +25,7 @@
           "value" : "tinted"
         }
       ],
+      "filename" : "App Icon — Full-Bleed 1.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"

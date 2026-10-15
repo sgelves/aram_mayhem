@@ -2,13 +2,29 @@
 
 Only read this file if the Stitch → Figma export itself has to change or be redone (new/updated Stitch screens, broken import, new assets). It is not needed for normal app work.
 
-## Current state (2026-10-03)
+## Current state (2026-10-03; Anvils frames modified 2026-10-14, see Change log)
 
 - Figma file: "Mayhem Forge — Stitch Export", key `ZNCnbEUQavsNCkMjulY9oN`, https://www.figma.com/design/ZNCnbEUQavsNCkMjulY9oN (team plan `team::1688248093334360990`).
 - Source: Stitch project `18417273127315870605`.
 - Page 1, one row, y=0, 120px gap: Launch — iPhone (390 wide), Augments — iPhone (390), Stat Anvils — iPhone (390), Augments — iPad Landscape (1280), Stat Anvils — iPad Landscape (1280).
 - Below at y=1900: App Icon — Full-Bleed, App Icon — Tinted / Mono, Anvil & Crystal Glyph (vectors from the Stitch SVGs).
 - Purpose: inspect spacing, colors and sizes only. Frames are raw captured frames, not components.
+
+## Change log
+
+### 2026-10-14 — Anvil cards: stats first, price/level once (edited directly in Figma)
+
+Stitch edits did not persist (`edit_screens` returned DOM operations but the stored HTML of both Anvils screens stayed unchanged), so these changes exist **only in Figma**. Stitch still has the old cards. Do not re-export the two Anvils screens from Stitch without redoing these edits.
+
+Frames edited (in place): `Stat Anvils — iPhone` (`14:2`) and `Stat Anvils — iPad Landscape` (`16:2`).
+
+- Removed the per-card "Unlock Level 9" / "Unlock Lv 9" text and the 750 G / "Cost 750 Gold" pill or row on all three tier cards. Price and level now appear once, in the "What are Stat Anvils?" box (Unlock Level 9, Cost 750 Gold).
+- Added a "Stats granted · Random" header plus "Stats are rolled randomly" note (new auto-layout frames `73:2`…`73:17`) above the stat rows on every card.
+- iPhone: stat row labels renamed "Stat" → "Random stat" (values stay "value TBD"). Icon slot enlarged 32 → 56 px. Frame grew 1589 → 1811 px; bottom nav moved to y=1754.
+- iPad: removed the one-line card subtitles (e.g. "Standard core stat shards") and the Prismatic card's equivalent paragraph. Icon slots enlarged 40 → 56 px (Silver, Gold). Primary/Secondary/Special stat rows are unchanged.
+- Not changed: the Augments frames, the right sidebar inspector on iPad (still shows Prismatic details), the "Augments that grant Anvils" section.
+- Planned but not done: real anvil icon from CommunityDragon (item `220000`, `220000_StatAnvil.png`; vouchers share `3865_WorldAtlas.png`). Figma cannot create image fills via `use_figma`, so the icon slots stay as Material glyphs. Needs a CLAUDE.md exception for "no Riot official art" (item icons only).
+- Open: the Stitch project also has a stray screen "Augments (Prioritized Descriptions)" (`1b7fe4d0a00f4b2fab2fa43a14cd5da9`) created by a rejected edit.
 
 ## Known limits
 
